@@ -1,27 +1,60 @@
-@import './src/core/scss/variables.scss';
+@import "./src/core/scss/variables.scss";
 
-.todo-list {
-    margin: 0 auto;
-    padding-inline-start: 0px;
+.task-list {
+  margin: 0 auto;
+  padding-inline-start: 0px;
 
-    .todo-list__todo-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  color: var(--dark-mode-text);
 
-        height: 30px;
+  &__task-item {
+    display: flex;
 
-        background: #1C2047;
+    background: var(--dark-mode-card-background);
 
-        border-radius: 10px;
+    height: 60px;
 
-        margin: 2% 0;
-        padding: 2% 5%;
+    margin: 10px 0;
+    .task-item__avatar {
+      background: #ffe259; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #ffa751,
+        #ffe259
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #ffa751,
+        #ffe259
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-        color: var(--light-text);
+      width: 25%;
 
-        .todo-item__title {
-            margin: auto;
-        }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .avatar__icon {
+        font-size: 2.5rem;
+      }
     }
+    .task-item__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      margin-left: 15px;
+      font-size: 0.75rem;
+      .info__time {
+        color: #989ca7;
+
+        font-weight: 300;
+      }
+    }
+    .task-item__alarm {
+      align-self: center;
+      margin-left: auto;
+      margin-right: 20px;
+      font-size: 1.1rem;
+    }
+  }
 }
