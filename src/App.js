@@ -11,19 +11,7 @@ function App() {
 
   const [display, setDisplay] = useState(false)
   const [task, setTask] = useState([
-    {
-      id: 1,
-      title: "Workout",
-    },
-    {
-      id: 2,
-      title: "Clean Room",
-    },
-    {
-      id: 3,
-      title: "HomeWork",
-    },
-    
+   
   ])
 
 
@@ -32,11 +20,11 @@ function App() {
   }
 
 
-  const addItem = (title) => {
-    
+  const addItem = (title, date) => {
     const newItem = {
       id: task.length + 1,
-      title: title
+      title: title,
+      date: date,
     }
     setTask([newItem, ...task])
   }
