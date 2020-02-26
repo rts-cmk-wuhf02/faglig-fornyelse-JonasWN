@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 import "./addtask.scss";
 
-const Addtask = () => {
-  const [display, setDisplay] = useState(false);
-
-  const handleClick = () => {
-    setDisplay(!display);
-  };
+const Addtask = (props) => {
 
   return (
-    <div>
-      <div className="add-task" onClick={handleClick}>
-        +
+      <div className="add-task" onClick={props.click}>
+        <p className="add-task__icon">+</p>  
       </div>
-      <form action="" className={"task-form " + (display ? "display" : "")}>
-        <input type="text" className="task-form__input" />
-        <button type="submit" className="task-form__submit"></button>
-      </form>
-    </div>
   );
 };
 

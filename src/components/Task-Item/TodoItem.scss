@@ -6,6 +6,9 @@
 
   color: var(--dark-mode-text);
 
+  overflow: scroll;
+  max-height: 50vh;
+
   &__task-item {
     display: flex;
 
@@ -42,6 +45,8 @@
       flex-direction: column;
       justify-content: center;
 
+      width: 60%;
+      
       margin-left: 15px;
       font-size: 0.75rem;
       .info__time {
