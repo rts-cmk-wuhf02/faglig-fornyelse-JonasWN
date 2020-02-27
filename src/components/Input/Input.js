@@ -16,10 +16,8 @@ const Input = props => {
   };
 
   useEffect(() => {
-    if (document.querySelector(".info__heading").value === "") {
-      document.querySelector(".info__heading").focus();
-    }
-  });
+    document.querySelector(".info__heading").focus();
+  }, [props.display]);
 
   const onChange = e => {
     setTitle(e.target.value);
