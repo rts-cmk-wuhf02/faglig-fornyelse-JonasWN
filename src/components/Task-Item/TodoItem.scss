@@ -6,8 +6,8 @@
 
   color: var(--dark-mode-text);
 
-  overflow-y: scroll;
-  max-height: 50vh;
+  // overflow-y: scroll;
+  max-height: 90vh;
 
   &__task-item {
     display: flex;
@@ -15,8 +15,9 @@
     background: var(--dark-mode-card-background);
 
     height: 60px;
-
+    width: 80vw;
     margin: 10px 0;
+    position: absolute;
     .task-item__avatar {
       background: #ffe259; /* fallback for old browsers */
       background: -webkit-linear-gradient(
@@ -29,7 +30,7 @@
         #ffa751,
         #ffe259
       ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
       width: 25%;
 
       display: flex;

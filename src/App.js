@@ -11,8 +11,9 @@ function App() {
 
   const [display, setDisplay] = useState(false)
   const [task, setTask] = useState([
-   
+
   ])
+
 
 
   const handleClick = (e) => {
@@ -26,20 +27,20 @@ function App() {
       title: title,
       date: date,
     }
-    setTask([newItem, ...task])
+    setTask([...task, newItem])
   }
 
   return (
-    <div className="App">
+    <main className="App">
       <Header />
       <Title />
       <ProgressBar />
       <ul className="task-list">
-        <Input display={display} addItem={addItem} click={handleClick}/>
-        <Tasks task={task}/>
+        <Input display={display} addItem={addItem} click={handleClick} />
+        <Tasks task={task} />
       </ul>
-      <Addtask click={handleClick}  />
-    </div>
+      <Addtask click={handleClick} />
+    </main>
   );
 }
 
