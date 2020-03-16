@@ -16,8 +16,9 @@
 
     height: 60px;
     width: 80vw;
-    margin: 10px 0;
+    margin: 5px 0;
     position: absolute;
+    transform: translate3d(0, -75px, 0);
     .task-item__avatar {
       background: #ffe259; /* fallback for old browsers */
       background: -webkit-linear-gradient(
@@ -47,7 +48,7 @@
       justify-content: center;
 
       width: 60%;
-      
+
       margin-left: 15px;
       font-size: 0.75rem;
       .info__time {
