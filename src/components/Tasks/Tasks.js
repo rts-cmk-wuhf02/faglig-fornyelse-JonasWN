@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import TaskItem from "../Task-Item/TaskItem.js";
+import RemoveTask from "../RemoveTask/RemoveTask";
 import clamp from "lodash-es/clamp";
 import swap from "lodash-move";
 import { useGesture } from "react-with-gesture";
@@ -24,14 +25,13 @@ const fn = (order, down, originalIndex, curIndex, y) => index =>
         immediate: false
       };
 
-const Tasks = ({ task }) => {
+const Tasks = ({ task, remove }) => {
   useEffect(() => {
     order.current = task.map((_, index) => index);
     setSprings(fn(order.current));
   }, [task]);
 
   let order = useRef(task.map((_, index) => index)); // Store indices as a local ref, this represents the item order
-  console.log(order.current);
 
   const [springs, setSprings] = useSprings(task.length, fn(order.current));
   const bind = useGesture(({ args: [originalIndex], down, delta: [, y] }) => {
@@ -62,9 +62,10 @@ const Tasks = ({ task }) => {
         )
       }}
     >
-      <div className="task-item__avatar">
+      {/* <div className="task-item__avatar">
         <IoIosArrowDropdownCircle className="avatar__icon" />
-      </div>
+      </div> */}
+      <RemoveTask remove={remove} index={i} />
       <div className="task-item__info">
         <h3 className="info__heading">{task[i].title}</h3>
         <p className="info__time">{task[i].date}</p>
