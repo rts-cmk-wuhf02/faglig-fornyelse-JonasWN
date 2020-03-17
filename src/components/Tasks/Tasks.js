@@ -11,29 +11,31 @@ import { FaRegBell } from "react-icons/fa";
 const fn = (order, down, originalIndex, curIndex, y) => index =>
   down && index === originalIndex
     ? {
-        y: curIndex * 68 + y,
-        scale: 1.1,
-        zIndex: "1",
-        shadow: 15,
-        immediate: n => n === "y" || n === "zIndex"
-      }
+      y: curIndex * 68 + y,
+      scale: 1.1,
+      zIndex: "1",
+      shadow: 20,
+      immediate: n => n === "y" || n === "zIndex"
+    }
     : {
-        y: order.indexOf(index) * 68,
-        scale: 1,
-        zIndex: "0",
-        shadow: 1,
-        immediate: false
-      };
+      y: order.indexOf(index) * 68,
+      scale: 1,
+      zIndex: "0",
+      shadow: 101,
+      immediate: false
+    };
 
 const Tasks = ({ task, remove }) => {
+
   useEffect(() => {
     order.current = task.map((_, index) => index);
     setSprings(fn(order.current));
   }, [task]);
 
-  let order = useRef(task.map((_, index) => index)); // Store indices as a local ref, this represents the item order
 
+  let order = useRef(task.map((_, index) => index));
   const [springs, setSprings] = useSprings(task.length, fn(order.current));
+
   const bind = useGesture(({ args: [originalIndex], down, delta: [, y] }) => {
     const curIndex = order.current.indexOf(originalIndex);
     const curRow = clamp(
@@ -50,11 +52,11 @@ const Tasks = ({ task, remove }) => {
     <animated.li
       {...bind(i)}
       className="task-list__task-item"
-      key={i}
+      key={task[i].id}
       style={{
         zIndex,
         boxShadow: shadow.interpolate(
-          s => `rgba(0, 0, 0, 0.15) 0px ${s}px ${2 * s}px 0px`
+          s => `rgba(0, 0, 0, 0.25) 0px 25px 50px -12px`
         ),
         transform: interpolate(
           [y, scale],
@@ -62,10 +64,7 @@ const Tasks = ({ task, remove }) => {
         )
       }}
     >
-      {/* <div className="task-item__avatar">
-        <IoIosArrowDropdownCircle className="avatar__icon" />
-      </div> */}
-      <RemoveTask remove={remove} index={i} />
+      <RemoveTask remove={remove} index={task[i].id} />
       <div className="task-item__info">
         <h3 className="info__heading">{task[i].title}</h3>
         <p className="info__time">{task[i].date}</p>

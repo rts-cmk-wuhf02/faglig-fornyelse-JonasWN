@@ -31,13 +31,16 @@
         #ffa751,
         #ffe259
       ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-      width: 25%;
-
+      background: linear-gradient(135deg, #fbdc7b 0%, #fda085 100%);
+      width: 40%;
+      border-left: 1px solid #b3a5a5;
+      border-top: 1px solid #b3a5a5;
+      border-bottom: 1px solid #b3a5a5;
+  
       display: flex;
       align-items: center;
       justify-content: center;
-
+      
       .avatar__icon {
         font-size: 2.5rem;
       }
@@ -56,6 +59,9 @@
 
         font-weight: 300;
       }
+      .info__heading {
+        font-weight: 300;
+      }
     }
     .task-item__alarm {
       align-self: center;
@@ -65,3 +71,4 @@
     }
   }
 }
+

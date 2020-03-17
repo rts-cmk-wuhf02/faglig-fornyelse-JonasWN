@@ -2,8 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const RemoveTask = ({ remove, index }) => {
+
+
+  // remove task[index] from list
   const onRemove = () => {
-    console.log(index);
     remove(index);
   };
 

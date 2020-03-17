@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 300;
 
   color: var(--dark-mode-text);
@@ -18,18 +18,21 @@
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
-
+  --borderWidth: 20px;
   background: -webkit-linear-gradient(
     to right,
-    #ffa751,
-    #ffe259
+    #6708bd,
+    #53a5ff
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #ffa751,
-    #ffe259
+    #6708bd,
+    #53a5ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
+  
+  
   &__icon {
     margin-bottom: 2px;
   }
@@ -41,20 +44,20 @@
 
   &__input {
     width: 80%;
-    height: 20px;
+    height: 15px;
     background: none;
 
     outline: none;
 
     border: none;
-    border-left: 1px solid #faf3ff;
+    border-left: 1px solid #6d6d6d;
 
     padding-left: 5px;
 
     color: var(--dark-mode-text);
     font-weight: bold;
-    font-size: 0.9rem;
-
+    font-size: 0.7rem;
+    box-shadow:rgba(0, 0, 0, 0.15) 0px 0px 15px 0px;
     margin: 1px 0;
   }
   &__submit {
@@ -66,3 +69,30 @@
 .display {
   display: block;
 }
+
+// .add-task:after {
+//   content: '';
+//   position: absolute;
+//   top: calc(-1 * var(--borderWidth));
+//   left: calc(-1 * var(--borderWidth));
+//   height: calc(100% + var(--borderWidth) * 2);
+//   width: calc(100% + var(--borderWidth) * 2);
+//   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+//   border-radius: calc(2 * var(--borderWidth));
+//   z-index: -1;
+//   animation: animatedgradient 6s ease-in-out infinite;
+//   background-size: 300% 300%;
+// }
+
+
+// @keyframes animatedgradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
