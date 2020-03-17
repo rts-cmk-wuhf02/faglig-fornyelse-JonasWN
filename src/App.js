@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import hero from './core/images/hero.png'
 import footerLeft from './core/images/footer_left.png'
 import footeright from './core/images/footer_right.png'
+import logo from './core/images/Logo.png'
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -35,7 +36,7 @@ function App() {
   return (
     <main className="App">
       <Header />
-      {/* <img src={hero} alt="" /> */}
+      <img src={logo} alt="Logo" className="logo" />
       {/* <Title />
       <ProgressBar /> */}
       <ul className="task-list">

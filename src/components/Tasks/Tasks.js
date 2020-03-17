@@ -21,7 +21,7 @@ const fn = (order, down, originalIndex, curIndex, y) => index =>
       y: order.indexOf(index) * 68,
       scale: 1,
       zIndex: "0",
-      shadow: 101,
+      shadow: 1,
       immediate: false
     };
 
