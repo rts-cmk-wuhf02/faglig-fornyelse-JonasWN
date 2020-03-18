@@ -11,14 +11,14 @@ import { FaRegBell } from "react-icons/fa";
 const fn = (order, down, originalIndex, curIndex, y) => index =>
   down && index === originalIndex
     ? {
-      y: curIndex * 68 + y,
+      y: curIndex * 61 + y,
       scale: 1.1,
       zIndex: "1",
       shadow: 20,
       immediate: n => n === "y" || n === "zIndex"
     }
     : {
-      y: order.indexOf(index) * 68,
+      y: order.indexOf(index) * 61,
       scale: 1,
       zIndex: "0",
       shadow: 1,
@@ -56,7 +56,7 @@ const Tasks = ({ task, remove }) => {
       style={{
         zIndex,
         boxShadow: shadow.interpolate(
-          s => `rgba(0, 0, 0, 0.25) 0px 25px 50px -12px`
+          s => `rgba(0, 0, 0, 0.20) 0px 25px 50px -12px`
         ),
         transform: interpolate(
           [y, scale],

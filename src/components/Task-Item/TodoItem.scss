@@ -18,7 +18,7 @@
     width: 80vw;
     margin: 5px 0;
     position: absolute;
-    transform: translate3d(0, -75px, 0);
+    transform: translate3d(0, -63px, 0);
     .task-item__avatar {
       background: #ffe259; /* fallback for old browsers */
       background: -webkit-linear-gradient(
@@ -61,6 +61,7 @@
       }
       .info__heading {
         font-weight: 300;
+        color: #c6dfff;
       }
     }
     .task-item__alarm {

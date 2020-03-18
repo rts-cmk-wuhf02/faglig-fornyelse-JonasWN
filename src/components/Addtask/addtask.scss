@@ -8,10 +8,10 @@
   justify-content: center;
   align-items: center;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
 
-  color: var(--dark-mode-text);
+  color: var(--light-mode-text);
 
   position: fixed;
   bottom: 20px;
@@ -29,9 +29,10 @@
     #6708bd,
     #53a5ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 1px 15px rgba(0,0,0,0.1);
 
-  
+   background: #fbfbff;
+   font-family: "roboto"; 
   
   &__icon {
     margin-bottom: 2px;

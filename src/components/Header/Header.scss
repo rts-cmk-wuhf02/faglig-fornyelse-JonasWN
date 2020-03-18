@@ -4,12 +4,34 @@
 
   color: var(--light-mode-text);
 
-  margin-top: 10%;
+  margin-top: 20px;
   margin-bottom: 20vh;
+  
+
 }
 
-.logo {
-  width: 50px;
+.left-header-title {
+  position: absolute;
+  left: -5px;
+  top: 55%;
+  transform: translate(-50%, -30%);
+  letter-spacing: 2px;
+}
+.right-header-title {
+  position: absolute;
+  right: -28px;
+  top: 55%;
+  transform: translate(-50%, -30%);
+  letter-spacing: 3px;
+}
+
+.logo-container {
+  width: 40px;
+  margin: 0 auto;
+  position: relative;
+  .logo {
+    
+  }
 }
 
 // #box {
