@@ -4,7 +4,7 @@ import RemoveTask from "../RemoveTask/RemoveTask";
 import clamp from "lodash-es/clamp";
 import swap from "lodash-move";
 import { useGesture } from "react-with-gesture";
-import { useSprings, animated, interpolate } from "react-spring";
+import { useSprings, animated, interpolate, useSpring } from "react-spring";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { FaRegBell } from "react-icons/fa";
 
@@ -26,6 +26,7 @@ const fn = (order, down, originalIndex, curIndex, y) => index =>
     };
 
 const Tasks = ({ task, remove }) => {
+
 
   useEffect(() => {
     order.current = task.map((_, index) => index);

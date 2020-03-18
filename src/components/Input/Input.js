@@ -28,7 +28,7 @@ const Input = props => {
   };
 
   return (
-    <form action="" className={"task-form " + (props.display ? "display" : "")}>
+    <form action="" className={"task-form " + (props.display ? "display slide-in-fwd-center" : "")}>
       <li className="task-list__task-item">
         <div className="task-item__avatar">
           <MdPlaylistAddCheck className="avatar__icon" onClick={onSubmit} />

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./addtask.scss";
 
-const Addtask = (props) => {
+const Addtask = ({ click, display }) => {
 
   return (
-      <div className="add-task" onClick={props.click}>
-        <p className="add-task__icon">+</p>  
-      </div>
+    <div className={"add-task " + (display ? "rotate" : "")} onClick={click}>
+      <p className="add-task__icon">+</p>
+    </div>
   );
 };
 

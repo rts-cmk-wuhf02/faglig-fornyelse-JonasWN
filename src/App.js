@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import "./App.scss";
 import ProgressBar from "./components/Progress-Bar/ProgressBar.js";
@@ -15,6 +15,14 @@ import footeright from './core/images/footer_right2.png'
 function App() {
   const [display, setDisplay] = useState(false);
   const [task, setTask] = useState([]);
+
+  const checkTime = () => {
+    if (new Date().getHours() === 0) {
+      setTask([])
+      console.log("reset");
+    }
+  }
+  setInterval(checkTime, 30000 * 10);
 
   const handleClick = e => {
     setDisplay(!display);
@@ -36,14 +44,14 @@ function App() {
   return (
     <main className="App">
       <Header />
-
+      {/* <img src={hero} alt="" className="add-logo" /> */}
       {/* <Title />
       <ProgressBar /> */}
       <ul className="task-list">
         <Input display={display} addItem={addItem} click={handleClick} />
         <Tasks task={task} remove={removeItem} />
       </ul>
-      <Addtask click={handleClick} />
+      <Addtask click={handleClick} display={display} />
       {/* <img src={footerLeft} alt="" className="footer-left" /> */}
       {/* <img src={footeright} alt="" className="footer-right" /> */}
     </main>
