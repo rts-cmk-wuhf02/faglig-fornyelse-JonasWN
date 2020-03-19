@@ -10,7 +10,6 @@ const RemoveTask = ({ remove, index }) => {
     remove(index);
   };
   const onChecked = e => {
-    console.log(e.target)
     setChecked(!checked)
   }
   return (

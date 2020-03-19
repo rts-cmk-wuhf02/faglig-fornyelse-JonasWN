@@ -10,20 +10,31 @@ import { v4 as uuidv4 } from 'uuid';
 import hero from './core/images/hero.png'
 import footerLeft from './core/images/footer_left2.png'
 import footeright from './core/images/footer_right2.png'
-
+let midnight = true
 
 function App() {
   const [display, setDisplay] = useState(false);
   const [task, setTask] = useState([]);
+  const [time, setTime] = useState(new Date().getHours())
 
+  // Clears task at midnight
   const checkTime = () => {
-    if (new Date().getHours() === 0) {
+    const newTime = new Date().getHours()
+    if (time !== newTime) {
+      setTime(newTime)
+    }
+    if (time === 0 && midnight === true) {
       setTask([])
-      console.log("reset");
+      midnight = false
+    }
+    if (time === 1) {
+      midnight = true
     }
   }
-  setInterval(checkTime, 30000 * 10);
-
+  useEffect(() => {
+    const intervalID = setInterval(checkTime, 60000)
+    return () => clearInterval(intervalID)
+  })
   const handleClick = e => {
     setDisplay(!display);
   };
