@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaRegBell } from "react-icons/fa";
 import { GoSettings } from "react-icons/go";
 import { MdPlaylistAddCheck } from "react-icons/md";
+import { MdDeleteSweep } from "react-icons/md";
 
 const Input = props => {
   const [title, setTitle] = useState("");
@@ -26,9 +27,16 @@ const Input = props => {
   const handleTime = e => {
     setDate(e.target.value);
   };
-
+  const iconStyle = {
+    fontSize: "2rem"
+  };
   return (
-    <form action="" className={"task-form " + (props.display ? "display slide-in-fwd-center" : "")}>
+    <form
+      action=""
+      className={
+        "task-form " + (props.display ? "display slide-in-fwd-center" : "")
+      }
+    >
       <li className="task-list__task-item">
         <div className="task-item__avatar">
           <MdPlaylistAddCheck className="avatar__icon" onClick={onSubmit} />
@@ -47,7 +55,7 @@ const Input = props => {
             value={date}
           />
         </div>
-        <FaRegBell className="task-item__alarm" />
+        <MdDeleteSweep className="task-item__alarm" style={iconStyle} />
       </li>
     </form>
   );

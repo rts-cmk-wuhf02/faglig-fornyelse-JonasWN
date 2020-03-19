@@ -29,11 +29,11 @@
     #6708bd,
     #53a5ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 1px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 1px 15px rgba(0, 0, 0, 0.1);
 
-   background: #fbfbff;
-   font-family: "roboto"; 
-  
+  background: #fbfbff;
+  font-family: "roboto";
+
   &__icon {
     margin-bottom: 2px;
   }
@@ -57,8 +57,8 @@
 
     color: var(--dark-mode-text);
     font-weight: bold;
-    font-size: 0.7rem;
-    box-shadow:rgba(0, 0, 0, 0.15) 0px 0px 15px 0px;
+    font-size: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px 0px;
     margin: 1px 0;
   }
   &__submit {
@@ -74,15 +74,44 @@
   animation: Rotate 0.4s running both running ease-in-out;
 }
 
-
 @keyframes Rotate {
   0% {
     transform: rotate(0deg);
   }
- 
+
   100% {
     transform: rotate(45deg);
     background: rgb(15, 119, 255);
+  }
+}
+
+.slide-in-fwd-center {
+  -webkit-animation: slide-in-fwd-center 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    display: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
   }
 }
 
@@ -100,7 +129,6 @@
 //   background-size: 300% 300%;
 // }
 
-
 // @keyframes animatedgradient {
 //   0% {
 //     background-position: 0% 50%;
@@ -112,32 +140,3 @@
 //     background-position: 0% 50%;
 //   }
 // }
-
-.slide-in-fwd-center {
-	-webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
- @-webkit-keyframes slide-in-fwd-center {
-  0% {
-    -webkit-transform: translateZ(-1400px);
-            transform: translateZ(-1400px);
-    display: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-fwd-center {
-  0% {
-    -webkit-transform: translateZ(-1400px);
-            transform: translateZ(-1400px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}

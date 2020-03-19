@@ -1,21 +1,21 @@
 import React, { useRef, useState, useEffect } from "react";
-import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { MdDeleteSweep } from "react-icons/md";
+import { FaRegCalendarCheck, FaRegBell } from "react-icons/fa";
 
 const RemoveTask = ({ remove, index }) => {
-
-  const [checked, setChecked] = useState(false)
-
   // remove task[index] from list
   const onRemove = () => {
     remove(index);
   };
-  const onChecked = e => {
-    setChecked(!checked)
-  }
+  const iconStyle = {
+    fontSize: "2rem"
+  };
   return (
-    <div className={"task-item__avatar " + (checked ? "checked" : "")} onClick={onChecked} >
-      <IoIosArrowDropdownCircle className="avatar__icon" />
-    </div>
+    <MdDeleteSweep
+      className="task-item__alarm"
+      onClick={onRemove}
+      style={iconStyle}
+    />
   );
 };
 

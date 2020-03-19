@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import TaskItem from "../Task-Item/TaskItem.js";
 import RemoveTask from "../RemoveTask/RemoveTask";
+import Checked from "../Checked/Checked";
 import clamp from "lodash-es/clamp";
 import swap from "lodash-move";
 import { useGesture } from "react-with-gesture";
@@ -11,28 +12,25 @@ import { FaRegBell } from "react-icons/fa";
 const fn = (order, down, originalIndex, curIndex, y) => index =>
   down && index === originalIndex
     ? {
-      y: curIndex * 61 + y,
-      scale: 1.1,
-      zIndex: "1",
-      shadow: 20,
-      immediate: n => n === "y" || n === "zIndex"
-    }
+        y: curIndex * 61 + y,
+        scale: 1.1,
+        zIndex: "1",
+        shadow: 20,
+        immediate: n => n === "y" || n === "zIndex"
+      }
     : {
-      y: order.indexOf(index) * 61,
-      scale: 1,
-      zIndex: "0",
-      shadow: 1,
-      immediate: false
-    };
+        y: order.indexOf(index) * 61,
+        scale: 1,
+        zIndex: "0",
+        shadow: 1,
+        immediate: false
+      };
 
 const Tasks = ({ task, remove }) => {
-
-
   useEffect(() => {
     order.current = task.map((_, index) => index);
     setSprings(fn(order.current));
   }, [task]);
-
 
   let order = useRef(task.map((_, index) => index));
   const [springs, setSprings] = useSprings(task.length, fn(order.current));
@@ -65,12 +63,12 @@ const Tasks = ({ task, remove }) => {
         )
       }}
     >
-      <RemoveTask remove={remove} index={task[i].id} />
+      <Checked index={task[i].id} />
       <div className="task-item__info">
         <h3 className="info__heading">{task[i].title}</h3>
         <p className="info__time">{task[i].date}</p>
       </div>
-      <FaRegBell className="task-item__alarm" />
+      <RemoveTask remove={remove} index={task[i].id} />
     </animated.li>
   ));
 };
