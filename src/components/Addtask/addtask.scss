@@ -33,10 +33,6 @@
 
   background: #fbfbff;
   font-family: "roboto";
-
-  &__icon {
-    margin-bottom: 2px;
-  }
 }
 .task-form {
   display: none;
@@ -72,6 +68,9 @@
 }
 .rotate {
   animation: Rotate 0.4s running both running ease-in-out;
+}
+.none {
+  display: none;
 }
 
 @keyframes Rotate {

@@ -3,6 +3,7 @@ import Header from "./components/Header/Header.js";
 import "./App.scss";
 import ProgressBar from "./components/Progress-Bar/ProgressBar.js";
 import Title from "./components/Title/Title.js";
+import Clock from "./components/Clock/Clock";
 import Addtask from "./components/Addtask/Addtask.js";
 import Input from "./components/Input/Input.js";
 import Tasks from "./components/Tasks/Tasks.js";
@@ -18,23 +19,23 @@ function App() {
   const [time, setTime] = useState(new Date().getHours());
 
   // Clears task at midnight
-  const checkTime = () => {
-    const newTime = new Date().getHours();
-    if (time !== newTime) {
-      setTime(newTime);
-    }
-    if (time === 0 && midnight === true) {
-      setTask([]);
-      midnight = false;
-    }
-    if (time === 1) {
-      midnight = true;
-    }
-  };
-  useEffect(() => {
-    const intervalID = setInterval(checkTime, 60000);
-    return () => clearInterval(intervalID);
-  });
+  // const checkTime = () => {
+  //   const newTime = new Date().getHours();
+  //   if (time !== newTime) {
+  //     setTime(newTime);
+  //   }
+  //   if (time === 0 && midnight === true) {
+  //     setTask([]);
+  //     midnight = false;
+  //   }
+  //   if (time === 1) {
+  //     midnight = true;
+  //   }
+  // };
+  // useEffect(() => {
+  //   const intervalID = setInterval(checkTime, 60000);
+  //   return () => clearInterval(intervalID);
+  // });
   const handleClick = e => {
     setDisplay(!display);
   };
@@ -52,9 +53,14 @@ function App() {
     setTask([...task.filter(task => task.id !== item)]);
   };
 
+  const reset = () => {
+    setTask([]);
+  };
+
   return (
     <main className="App">
       <Header />
+      <Clock reset={reset} />
       <ul className="task-list">
         <Input display={display} addItem={addItem} click={handleClick} />
         <Tasks task={task} remove={removeItem} />

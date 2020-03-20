@@ -16,6 +16,12 @@ const Input = props => {
     setDate("");
   };
 
+  const clear = () => {
+    props.click();
+    setTitle("");
+    setDate("");
+  };
+
   useEffect(() => {
     document.querySelector(".info__heading").focus();
   }, [props.display]);
@@ -55,7 +61,11 @@ const Input = props => {
             value={date}
           />
         </div>
-        <MdDeleteSweep className="task-item__alarm" style={iconStyle} />
+        <MdDeleteSweep
+          className="task-item__alarm"
+          style={iconStyle}
+          onClick={clear}
+        />
       </li>
     </form>
   );

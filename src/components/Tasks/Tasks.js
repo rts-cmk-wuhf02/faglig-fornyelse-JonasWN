@@ -36,6 +36,8 @@ const Tasks = ({ task, remove }) => {
   const [springs, setSprings] = useSprings(task.length, fn(order.current));
 
   const bind = useGesture(({ args: [originalIndex], down, delta: [, y] }) => {
+    document.body.style.overflow = "hidden";
+
     const curIndex = order.current.indexOf(originalIndex);
     const curRow = clamp(
       Math.round((curIndex * 100 + y) / 100),
@@ -44,7 +46,10 @@ const Tasks = ({ task, remove }) => {
     );
     const newOrder = swap(order.current, curIndex, curRow);
     setSprings(fn(newOrder, down, originalIndex, curIndex, y));
-    if (!down) order.current = newOrder;
+    if (!down) {
+      order.current = newOrder;
+      document.body.style.overflow = null;
+    }
   });
 
   return springs.map(({ zIndex, shadow, y, scale }, i) => (
@@ -60,14 +65,11 @@ const Tasks = ({ task, remove }) => {
         transform: interpolate(
           [y, scale],
           (y, s) => `translate3d(0,${y}px,0) scale(${s})`
-        )
+        ),
+        marginBottom: task.length - 1 ? "15vh" : "0"
       }}
     >
-      <Checked index={task[i].id} />
-      <div className="task-item__info">
-        <h3 className="info__heading">{task[i].title}</h3>
-        <p className="info__time">{task[i].date}</p>
-      </div>
+      <Checked index={task[i].id} task={task} taskId={task[i]} />
       <RemoveTask remove={remove} index={task[i].id} />
     </animated.li>
   ));
