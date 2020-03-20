@@ -1,0 +1,78 @@
+@import "./src/core/scss/variables.scss";
+
+.task-list {
+  margin: 0 auto;
+  padding-inline-start: 0px;
+
+  color: var(--dark-mode-text);
+
+  // overflow-y: scroll;
+  max-height: 90vh;
+
+  &__task-item {
+    display: flex;
+
+    background: var(--dark-mode-card-background);
+
+    height: 60px;
+    width: 80vw;
+    margin: 5px 0;
+    position: absolute;
+    transform: translate3d(0, -63px, 0);
+    .task-item__avatar {
+      background: #ffe259; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #ffa751,
+        #ffe259
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #ffa751,
+        #ffe259
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(135deg, #fbdc7b 0%, #fda085 100%);
+      width: 40%;
+      border-left: 1px solid #b3a5a5;
+      border-top: 1px solid #b3a5a5;
+      border-bottom: 1px solid #b3a5a5;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .avatar__icon {
+        font-size: 2.5rem;
+      }
+    }
+    .task-item__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      width: 60%;
+
+      margin-left: 15px;
+      font-size: 0.75rem;
+      .info__time {
+        color: #989ca7;
+
+        font-weight: 300;
+      }
+      .info__heading {
+        font-weight: 300;
+        color: #c6dfff;
+      }
+    }
+    .task-item__alarm {
+      align-self: center;
+      margin-left: auto;
+      margin-right: 20px;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.task-list__task-item .checked {
+  background: linear-gradient(135deg, #01fe76 0%, #06ecec 100%);
+}

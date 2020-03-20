@@ -1,0 +1,20 @@
+.title {
+  color: var(--dark-mode-text);
+  text-align: center;
+
+  margin: 5vh 0;
+  &__heading {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  &__under-heading {
+    margin: 0;
+
+    font-weight: 300;
+    font-size: 0.75rem;
+
+    .under-heading__strong {
+      color: #0066ff;
+    }
+  }
+}

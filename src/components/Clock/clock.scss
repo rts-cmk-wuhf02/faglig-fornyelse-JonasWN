@@ -1,0 +1,18 @@
+@import "./src/core/scss/variables.scss";
+
+.clock-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  color: var(--light-mode-text);
+  font-size: 1rem;
+  font-weight: bold;
+
+  .date {
+    text-decoration: overline;
+  }
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
