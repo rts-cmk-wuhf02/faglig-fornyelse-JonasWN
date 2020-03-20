@@ -31,4 +31,4 @@ Jeg sat mig for at lære mest om React Hooks i dette projekt og hvordan man kan 
 
 Vue.js er nok det næste jeg vil sætte mig ned og lære til et projekt, da det er nok enda nemmere at sætte sig ind i end React.js. Jeg tror også det kommer til at vokse i popularitet hos folk and måske i virksomheder ( hvis React falder af) senere hen.
 
-Tak
+> Linket til siden - https://task-jwn.netlify.com/
